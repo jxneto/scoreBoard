@@ -185,14 +185,22 @@ const unsigned char fnt_nanofont_data[FNT_NANOFONT_SYMBOLS_COUNT][1 + FNT_NANOFO
 	{ 3, 96, 192, 0, 0, 0, 0, },  //glyph '~' code=93
 };
 
-
+//text statics for output vga
 static const char str31[] PROGMEM = "Score";
 static const char str32[] PROGMEM = "Set";
 static const char str33[] PROGMEM = "Match";
 static const char str34[] PROGMEM = "Select Service";
 static const char str35[] PROGMEM = "Select Sets";
 static const char str36[] PROGMEM = "Select Points";
-
+/* in portugese
+//text statics for output vga
+static const char str31[] PROGMEM = "Pontos";
+static const char str32[] PROGMEM = "Set";
+static const char str33[] PROGMEM = "Partida";
+static const char str34[] PROGMEM = "Selecione saque";
+static const char str35[] PROGMEM = "Selecione Sets";
+static const char str36[] PROGMEM = "Selecione Pontos";
+*/
 //create variable of control points
 int blueScore = 0;
 int redScore = 0;
@@ -214,7 +222,7 @@ char *playerRed="";
 char *playerBlue="";
 
 
-//control screen of game
+//control screen of game, change here, and in reset function
 int stategame = 2;
 
 boolean tmpBlue=0;
@@ -226,7 +234,7 @@ int debounceDelay = 50;
 
 char* custom_itoa(int i)
 {
-    static char output[3];  // 64-bit MAX_INT is 20 digits
+    static char output[3]; 
     char* p = &output[2];
     if(i==0){
       return "0";}
